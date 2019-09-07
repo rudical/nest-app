@@ -1,0 +1,26 @@
+@import '~@angular/material/theming';
+
+.toolbar-with-default-shadow {
+    @include mat-elevation(4);
+}
+.sub-toolbar {
+    background-color: #fff;
+    height: 50px;
+}
+
+.nest-logo {
+    background-image: url('/assets/img/nest-logo.png');
+    height: 50px;
+    width: 200px;
+    margin-left: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.icon {
+    padding: 0 14px;
+}
+.spacer {
+    flex: 1 1 auto;
+}
