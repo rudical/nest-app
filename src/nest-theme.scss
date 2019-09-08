@@ -1,0 +1,155 @@
+// Custom Theming for Angular Material
+@import '~@angular/material/theming';
+$nest-typography: mat-typography-config(
+  $font-family: '"Avenir", "Helvetica Neue", sans-serif',
+  $display-4:     mat-typography-level(112px, 112px, 300),
+  $display-3:     mat-typography-level(56px, 56px, 400),
+  $display-2:     mat-typography-level(45px, 48px, 400),
+  $display-1:     mat-typography-level(28px, 38px, 600),
+  $headline:      mat-typography-level(24px, 32px, 400),
+  $title:         mat-typography-level(24px, 24px, 500),
+  $subheading-2:  mat-typography-level(16px, 28px, 400),
+  $subheading-1:  mat-typography-level(15px, 24px, 400),
+  $body-2:        mat-typography-level(14px, 24px, 500),
+  $body-1:        mat-typography-level(14px, 20px, 400),
+  $caption:       mat-typography-level(12px, 20px, 400),
+  $button:        mat-typography-level(14px, 14px, 500),
+  $input:         mat-typography-level(16px, 1.25, 400)
+);
+@include mat-core($nest-typography);
+
+$nest-darkgreen: (
+    50 : #e5ebe6,
+    100 : #becec2,
+    200 : #93ad99,
+    300 : #688c70,
+    400 : #477451,
+    500 : #275b32,
+    600 : #23532d,
+    700 : #1d4926,
+    800 : #17401f,
+    900 : #0e2f13,
+    A100 : #6cff82,
+    A200 : #39ff56,
+    A400 : #06ff2b,
+    A700 : #00eb23,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$nest-lightgreen: (
+    50 : #ecf6ec,
+    100 : #cfe8d0,
+    200 : #afd8b0,
+    300 : #8ec890,
+    400 : #76bd79,
+    500 : #5eb161,
+    600 : #56aa59,
+    700 : #4ca14f,
+    800 : #429845,
+    900 : #318833,
+    A100 : #d1ffd2,
+    A200 : #9effa0,
+    A400 : #6bff6e,
+    A700 : #52ff56,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$nest-grey: (
+    50 : #f7f7f7,
+    100 : #e6e4e2,
+    200 : #a2a2a2,
+    300 : #808082,
+    400 : #707070,
+    500 : #4a4a4c,
+    600 : #434345,
+    700 : #3a3a3c,
+    800 : #323233,
+    900 : #222224,
+    A100 : #7e7ef2,
+    A200 : #4f4fee,
+    A400 : #0b0bff,
+    A700 : #0000f1,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$default-font-color: map-get($nest-grey,500);
+$mat-light-theme-foreground: (
+  base:              $default-font-color,
+  disabled-button:   rgba($default-font-color, 0.26),
+  elevation:         $default-font-color,
+  icon:              rgba($default-font-color, 0.54),
+  icons:             rgba($default-font-color, 0.54),
+  text:              $default-font-color,
+  slider-min:        rgba($default-font-color, 0.87),
+  slider-off:        rgba($default-font-color, 0.26),
+  slider-off-active: rgba($default-font-color, 0.38),
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$nest-app-primary: mat-palette($nest-darkgreen);
+// $nest-app-primary: mat-palette($mat-indigo);
+$nest-app-accent: mat-palette($nest-grey);
+// $nest-app-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$nest-app-warn: mat-palette($mat-red);
+
+
+// Create the theme object (a Sass map containing all of the palettes).
+$nest-app-theme: mat-light-theme($nest-app-primary, $nest-app-accent, $nest-app-warn);
+
+
+
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($nest-app-theme);
+

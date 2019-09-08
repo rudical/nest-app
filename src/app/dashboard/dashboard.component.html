@@ -1,7 +1,13 @@
 <div class="grid-container">
   <mat-grid-list cols="2" rowHeight="300px">
     <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
-      <nest-widget-1></nest-widget-1>
+        <nest-widget-small *ngIf="card.type == 'small'"
+        [title]="card.title"
+        [img]="card.img"
+        [description]="card.description"
+        [value]="card.value"
+        [actionText]="card.actionText"
+        ></nest-widget-small>
     </mat-grid-tile>
   </mat-grid-list>
 </div>

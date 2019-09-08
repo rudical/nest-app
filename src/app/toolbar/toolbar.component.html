@@ -1,16 +1,16 @@
-<mat-toolbar color="primary" class="toolbar-with-default-shadow">
+<mat-toolbar color="accent">
     <mat-toolbar-row>
         <div class="nest-logo"></div>
         <span class="spacer"></span>
-        <button mat-button [matMenuTriggerFor]="menu">
-            <mat-icon class="icon" class="more-button"  aria-hidden="true" >person</mat-icon>Amanda Connolly<mat-icon>expand_more</mat-icon>
+        <button mat-button [matMenuTriggerFor]="menu" class="person-button">
+            <mat-icon class="icon" id="person-icon" class="more-button"  aria-hidden="true" >person</mat-icon>Amanda Connolly<mat-icon id="expand-icon">expand_more</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
           <button mat-menu-item>My Profile</button>
           <button mat-menu-item>Logout</button>
         </mat-menu>
-        <button mat-button>
-            Notifications<mat-icon matBadge="5" matBadgeSize="small" matBadgeColor="warn" aria-hidden="true">notifications</mat-icon>
+        <button mat-button class="notification-button">
+            Notifications<mat-icon id="notification-icon" aria-hidden="true">notifications</mat-icon><span id="notification-alert"></span>
         </button>
     </mat-toolbar-row>
     <mat-toolbar-row class="sub-toolbar">

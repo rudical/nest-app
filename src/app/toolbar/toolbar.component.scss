@@ -1,8 +1,8 @@
-@import '~@angular/material/theming';
-
-.toolbar-with-default-shadow {
-    @include mat-elevation(4);
+@import '../../nest-theme';
+mat-toolbar {
+    @include mat-elevation(4, mat-color($nest-app-accent, 500) , .5);
 }
+
 .sub-toolbar {
     background-color: #fff;
     height: 50px;
@@ -18,8 +18,35 @@
     background-size: contain;
 }
 
-.icon {
-    padding: 0 14px;
+#person-icon {
+    line-height: 18px;
+    margin-right: 6px;
+}
+#expand-icon {
+    font-size: 14px;
+    margin-left: -3px;
+    line-height: 20px;
+}
+#notification-icon {
+    line-height: 20px;
+    margin-left: 5px;
+}
+#notification-alert {
+    width: 14px;
+    height: 14px;
+    right: 15px;
+    top: 5px;
+    position: absolute;
+    text-align: center;
+    display: inline-block;
+    border-radius: 50%;
+    transition: transform 200ms ease-in-out;
+    transform: scale(0.6);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    pointer-events: none;
+    background: mat-color($nest-app-warn);
 }
 .spacer {
     flex: 1 1 auto;

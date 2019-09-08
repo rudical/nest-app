@@ -9,10 +9,11 @@ import {
     MatIconModule,
     MatSliderModule,
     MatBadgeModule,
+    MatMenuModule
 
 } from '@angular/material';
 import { NgModule } from '@angular/core';
-
+import { LayoutModule } from '@angular/cdk/layout';
 @NgModule({
   imports: [
     MatButtonModule, 
@@ -25,6 +26,8 @@ import { NgModule } from '@angular/core';
     MatIconModule,
     MatSliderModule,
     MatBadgeModule,
+    MatMenuModule,
+    LayoutModule,
   ],
   exports: [
     MatButtonModule, 
@@ -37,6 +40,8 @@ import { NgModule } from '@angular/core';
     MatIconModule,
     MatSliderModule,
     MatBadgeModule,
+    MatMenuModule,
+    LayoutModule,
   ]
 })
 export class MaterialModule { }
