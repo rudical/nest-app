@@ -13,7 +13,7 @@ export class SliderComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   sliderSelect = (event) => {
     this.selectYear.emit(event.value);
   }

@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { WidgetService } from '../widgets/widget.service';
@@ -28,10 +28,6 @@ export class DashboardComponent {
     private breakpointObserver: BreakpointObserver,
     private widgetService: WidgetService,
   ) {}
-
-  ngAfterViewInit () {
-
-  }
 
   click = (event: MouseEvent, widget: Widget) => {
     alert('Widget button works!');

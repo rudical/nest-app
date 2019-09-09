@@ -5,8 +5,8 @@ export interface IWidgetSmallPayoad {
 }
 
 export interface ITodoListItem {
-  description: string,
-  done: boolean
+  description: string;
+  done: boolean;
 }
 interface ITodoListItems {
   year: number;
@@ -23,17 +23,17 @@ export interface IWidgetActionPlanPayoad {
 }
 
 export class Widget  {
-  private _isHandheld: boolean = false;
-  private _col: number = 1;
-  private _row: number = 1;
-  private _handsetCol: number = 1;
-  private _handsetRow: number = 1;
+  private _isHandheld = false;
+  private _col = 1;
+  private _row = 1;
+  private _handsetCol = 1;
+  private _handsetRow = 1;
   private _type: WidgetType = 'small';
   private _title: string;
   private _description?: string;
   private _actionText?: string;
   private _payload?: IWidgetSmallPayoad | IWidgetActionPlanPayoad;
-  constructor (type: WidgetType, title: string, col: number, row: number) {
+  constructor(type: WidgetType, title: string, col: number, row: number) {
     this.type = type;
     this.title = title;
     this.col = col;
@@ -123,7 +123,7 @@ export class Widget  {
   getRowCol = (): {row: number, col: number} => {
     if (this.isHandheld) {
       return {row: this.handsetRow, col: this.handsetCol};
-    } 
+    }
     return {row: this.row, col: this.col};
   }
 }

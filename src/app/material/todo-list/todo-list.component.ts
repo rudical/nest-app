@@ -7,7 +7,7 @@ import { ITodoListItem } from '../../widgets/widget';
 })
 export class TodoListComponent implements OnInit {
 
-  @Input() todoList:ITodoListItem[] = [];
+  @Input() todoList: ITodoListItem[] = [];
 
   constructor() { }
 

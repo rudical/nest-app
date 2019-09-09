@@ -5,14 +5,14 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
   templateUrl: './widget-header.component.html',
   styleUrls: ['./widget-header.component.scss']
 })
-export class WidgetHeaderComponent {
-  @Input() title: string = '';
-  @Input() description: string = '';
-  @Input() expandable: boolean = false;
+export class WidgetHeaderComponent implements OnInit {
+  @Input() title = '';
+  @Input() description = '';
+  @Input() expandable = false;
   @Output() expand: EventEmitter<boolean> = new EventEmitter<boolean>();
-  private _expanded: boolean = true;
+  private _expanded = true;
   public expandIcon: 'expand_less'|'expand_more' = 'expand_less';
-  ngOnInit () {
+  ngOnInit() {
     this.expand.emit(this._expanded);
   }
   toggleExpand = ($event) => {

@@ -7,21 +7,21 @@ import { IWidgetActionPlanPayoad, ITodoListItem} from './widget';
   templateUrl: './widget-action-plan.component.html',
   styleUrls: ['./widget-action-plan.component.scss']
 })
-export class WidgetActionPlanComponent {
+export class WidgetActionPlanComponent implements OnInit {
   public displayYear = 2019;
   public todoList: ITodoListItem[] = [];
   constructor() {}
-  @Input() title: string = '';
-  @Input() description: string = '';
-  @Input() actionText: string = '';
+  @Input() title = '';
+  @Input() description = '';
+  @Input() actionText = '';
   @Input() payload: IWidgetActionPlanPayoad;
   @Output() actionClick = new EventEmitter();
 
-  ngOnInit () {
+  ngOnInit() {
     this.displayYear = this.payload.slider.startYear;
-    this.selectYear(this.displayYear); 
+    this.selectYear(this.displayYear);
   }
-  
+
   click = (event: MouseEvent) => {
     this.actionClick.emit(event);
   }
@@ -32,7 +32,7 @@ export class WidgetActionPlanComponent {
   }
 
   selectTodosByYear = (year) => {
-    let todos = this.payload.todoList.find(a => a.year === year);
+    const todos = this.payload.todoList.find(a => a.year === year);
     this.todoList = (todos === undefined) ? [] : todos.todos;
   }
 }

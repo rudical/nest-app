@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Input, Output, EventEmitter } from '@angular/core';
 import { IWidgetSmallPayoad } from './widget';
 
 @Component({
@@ -9,14 +9,12 @@ import { IWidgetSmallPayoad } from './widget';
 })
 export class WidgetSmallComponent {
   constructor() {}
-  @Input() title: string = '';
-  @Input() description: string = '';
-  @Input() actionText: string = '';
+  @Input() title = '';
+  @Input() description = '';
+  @Input() actionText = '';
   @Input() payload: IWidgetSmallPayoad;
   @Output() actionClick = new EventEmitter();
 
-  ngOnInit () {}  
-  
   click = (event: MouseEvent) => {
     this.actionClick.emit(event);
   }
