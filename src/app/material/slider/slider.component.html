@@ -2,12 +2,13 @@
     class="slider"
     disabled="false"
     invert="false"
-    max="2060"
-    min="2020"
+    [max]="endYear"
+    [min]="startYear"
     step="1"
     thumbLabel="true"
     tickInterval="10"
-    vertical="false">
+    vertical="false"
+    (change)="sliderSelect($event)">
 </mat-slider>
 <ul class="slider-ticks">
     <li>2020</li>

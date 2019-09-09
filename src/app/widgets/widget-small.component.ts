@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { IWidgetSmallPayoad } from './widget';
 
 @Component({
   selector: 'nest-widget-small',
@@ -7,33 +8,16 @@ import { Input, Output, EventEmitter, OnInit } from '@angular/core';
   styleUrls: ['./widget-small.component.scss']
 })
 export class WidgetSmallComponent {
-  private _row: number = 1;
-  private _col: number = 1;
   constructor() {}
   @Input() title: string = '';
-  @Input() img: string = '';
   @Input() description: string = '';
-  @Input() value: string = '';
   @Input() actionText: string = '';
-  // @Output() actionClick = new EventEmitter();
+  @Input() payload: IWidgetSmallPayoad;
+  @Output() actionClick = new EventEmitter();
 
-  ngOnInit () {
-
-  }
-  getWidgetConfig = () => {
-    return {
-      title: this.title,
-      img: this.img,
-      description: this.description,
-      value: this.value,
-      actionText: this.actionText,
-      col: this._col,
-      row: this._row
-    }
-  }
-
+  ngOnInit () {}  
   
-  // click = ($event) => {
-  //   this.actionClick.emit(true);
-  // }
+  click = (event: MouseEvent) => {
+    this.actionClick.emit(event);
+  }
 }

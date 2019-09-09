@@ -1,18 +1,20 @@
-<div class="grid-container">
-  <mat-grid-list cols="2" rowHeight="10px">
-    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
-        <nest-widget-small *ngIf="card.type == 'small'"
-        [title]="card.title"
-        [img]="card.img"
-        [description]="card.description"
-        [value]="card.value"
-        [actionText]="card.actionText"
-        ></nest-widget-small>
-        <nest-widget-action-plan *ngIf="card.type == 'action-plan'"
-        [title]="card.title"
-        [description]="card.description"
-        [actionText]="card.actionText"
-        ></nest-widget-action-plan>
+<div class="grid-container" [ngClass]="{'handheld': isHandset}">
+  <mat-grid-list cols="2" rowHeight="10px" >
+    <mat-grid-tile *ngFor="let widget of widgets | async" [colspan]="widget.getRowCol().col" [rowspan]="widget.getRowCol().row">
+      <nest-widget-small *ngIf="widget.type == 'small'"
+        [title]="widget.title"
+        [description]="widget.description"
+        [payload]="widget.payload"
+        [actionText]="widget.actionText"
+        (actionClick)="click($event, widget)"
+      ></nest-widget-small>
+      <nest-widget-action-plan *ngIf="widget.type == 'action-plan'"
+        [title]="widget.title"
+        [description]="widget.description"
+        [actionText]="widget.actionText"
+        [payload]="widget.payload"
+        (actionClick)="click($event, widget)"
+      ></nest-widget-action-plan>
     </mat-grid-tile>
   </mat-grid-list>
 </div>

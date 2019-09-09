@@ -13,11 +13,13 @@ import {
 
 } from '@angular/material';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { LayoutModule } from '@angular/cdk/layout';
 import { SliderComponent } from './slider/slider.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 @NgModule({
 imports: [
+  CommonModule,
   MatButtonModule, 
   MatToolbarModule, 
   MatCardModule, 
