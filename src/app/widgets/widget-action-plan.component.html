@@ -1,13 +1,15 @@
 <mat-card class="widget mat-elevation-z6">
-  <nest-widget-header [title]="title"></nest-widget-header>
+  <nest-widget-header [title]="title" [description]="description" [expandable]="true"></nest-widget-header>
   <mat-card-content  class="widget-content">
-      <div class="widget-image" [ngStyle]="{ 'background-image': img }"></div>
-      <div class="widget-info">
-        <div class="widget-data mat-display-1" >${{value | number}}</div>
-        <div class="widget-description mat-small" >{{description}}</div>
-      </div>
+    <div class="mat-display-1 widget-year">2019</div>
+    <div class="mat-small widget-age">Age 52</div>
+    <div class="details">
+      <nest-slider></nest-slider>
+      <nest-todo-list></nest-todo-list>
+    </div>
   </mat-card-content>
+  <mat-divider></mat-divider>
   <mat-card-actions class="widget-actions">
-    <button mat-flat-button color="primary" (actionClick)="click($event)">{{actionText}}</button>
+    <button class="action-button" mat-button color="primary" (actionClick)="click($event)">Export Action Plan</button>
   </mat-card-actions>
 </mat-card>

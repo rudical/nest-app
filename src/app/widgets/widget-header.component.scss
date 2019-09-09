@@ -1,2 +1,41 @@
+@import '../../nest-theme';
+@mixin nest-widget-header-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
 
+  mat-card-header {
+    display: inline-flex;
+    width: 100%;
+  }
+  ::ng-deep div.mat-card-header-text {
+    margin: 0;
+  }
+  mat-card-title {
+    margin: 0;
+    margin:10px;
+    color: mat-color($accent, 500);
+  }
   
+  .description {
+    flex-grow: 1;
+    padding-left: 5px;
+    margin-top:15px;
+    text-align: right;
+  }
+  mat-icon {
+    color:mat-color($primary);
+  }
+}
+
+@mixin nest-widget-header-typography($config) {
+  .description {
+    font: {
+      family: mat-font-family($config, caption);
+      size: mat-font-size($config, caption);
+      weight: mat-font-weight($config, caption);
+    }
+  }
+}
+
+@include nest-widget-header-theme($nest-app-theme);
+@include nest-widget-header-typography($nest-typography);

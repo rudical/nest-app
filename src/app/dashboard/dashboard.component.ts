@@ -26,7 +26,7 @@ export class DashboardComponent {
         value: 160287,
         actionText: `Optimize for Annual Income`,
         type: 'small',
-        cols: 1, rows: 1
+        cols: 1, rows: 27
       },
       { title: `Estate Value`,
         img: `url('/assets/img/Saving money.svg')`,
@@ -34,7 +34,14 @@ export class DashboardComponent {
         value: 1197869,
         actionText: `Optimize for Estate Value`,
         type: 'small',
-        cols: 1, rows: 1
+        cols: 1, rows: 27
+      },
+      { title: `Action Plan`,
+        description: `See what you’ll do each year in to keep your retirement on track.`,
+        // value: 1197869,
+        actionText: `Export Action Plan`,
+        type: 'action-plan',
+        cols: 2, rows: 60
       },
         // { title: 'Card 3', cols: 2, rows: 2 }
       ];

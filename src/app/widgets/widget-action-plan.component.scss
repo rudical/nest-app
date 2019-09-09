@@ -1,0 +1,56 @@
+@import '../../nest-theme';
+@mixin nest-widget-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  .widget {
+    display:flex;
+    flex-direction: column;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 20px;
+    padding-bottom: 50px;
+    padding-top: 20px;
+    border-color: mat-color($accent, A400);
+    min-width: 352px;
+
+  }
+  nest-widget-header {
+    margin-bottom: 10px;
+  }
+  .widget-year {
+    color: mat-color($primary);
+    margin: 0;
+  }
+
+  mat-card-content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .details {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  nest-todo-list {
+    display: block;
+    margin-top: 30px;
+  }
+  .mat-card-actions .action-button {
+    float: right;
+    bottom: -13px;
+    margin-right: 20px;
+  }
+  mat-divider {
+    position: absolute;
+    bottom: 80px;
+    border-top: 2px solid mat-color($accent,100);
+  }
+
+}
+
+@mixin nest-widget-typography($config) {
+}
+
+@include nest-widget-theme($nest-app-theme);
+@include nest-widget-typography($nest-typography);

@@ -16,7 +16,7 @@
     min-width: 352px;
   }
   nest-widget-header {
-    margin-bottom: 30px;
+    margin-bottom: 22px;
   }
 
   .widget-actions {
@@ -39,7 +39,6 @@
     padding: 5px;
   }
   .widget-image {
-    // background-image: url('/assets/img/Financial freedom.svg');
     width: 104px;
     min-height: 64px;
     background-position: center top;
@@ -51,11 +50,11 @@
     color: mat-color($primary);
     margin: 0;
   }
+  
   .widget-description {
     color: mat-color($accent, 400);
     padding-left: 5px;
   }
-
 }
 
 @mixin nest-widget-typography($config) {
@@ -66,11 +65,11 @@
       weight: mat-font-weight($config, display-1);
     }
   }
-  .widget-data {
+  .widget-description {
     font: {
-      family: mat-font-family($config, display-1);
-      size: mat-font-size($config, display-1);
-      weight: mat-font-weight($config, display-1);
+      family: mat-font-family($config, caption);
+      size: mat-font-size($config, caption);
+      weight: mat-font-weight($config, caption);
     }
   }
 }

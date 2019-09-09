@@ -1,0 +1,76 @@
+@import '../../../nest-theme';
+@mixin nest-todo-list-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  .todo-container {
+    height: 260px;
+    overflow-y: auto;
+  }
+  .todo-container::-webkit-scrollbar {
+      -webkit-appearance: none;
+  }
+  .todo-container::-webkit-scrollbar:vertical {
+      width: 4px;
+  }
+  .todo-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: mat-color($accent, 400);
+  }
+
+  .todo-container::-webkit-scrollbar-track-piece {
+    background-color: mat-color($accent, 100);
+
+  }
+
+
+  .mat-divider {
+    border-top-color: mat-color($accent, 100);
+    border-top-width: 2px;
+  }
+  ::ng-deep .mat-card .mat-divider-horizontal {
+    position: inherit;
+  }
+  mat-list-item {
+    display: inline-flex;
+    width: 100%;
+    min-height: 60px;
+  }
+  ::ng-deep .mat-list-item-content {
+    padding: 0 !important;
+    margin-top: 25px !important;    
+  }
+
+  .done-icon {
+    margin-right: 10px;
+    color: mat-color($accent, 200);
+    &.checked {
+      color: mat-color($primary);
+    }
+  }
+  .description {
+    flex-grow: 1;
+    max-width: 440px;
+    color: mat-color($accent, 500);
+  }
+  .spacer {
+    flex-grow: 1;
+  }
+  .action-menu {
+    align-self: flex-end; 
+    margin-left: 10px;
+    color: mat-color($primary);
+  }
+
+}
+
+@mixin nest-todo-list-typography($config) {
+  .done-icon, .action-menu-icon {
+    font: {
+      size: mat-font-size($config, body-2);
+    }
+  }
+}
+
+@include nest-todo-list-theme($nest-app-theme);
+@include nest-todo-list-typography($nest-typography);

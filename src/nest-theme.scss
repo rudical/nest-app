@@ -8,9 +8,9 @@ $nest-typography: mat-typography-config(
   $display-1:     mat-typography-level(28px, 38px, 600),
   $headline:      mat-typography-level(24px, 32px, 400),
   $title:         mat-typography-level(24px, 24px, 500),
-  $subheading-2:  mat-typography-level(16px, 28px, 400),
+  $subheading-2:  mat-typography-level(14px, 20px, 400),
   $subheading-1:  mat-typography-level(15px, 24px, 400),
-  $body-2:        mat-typography-level(14px, 24px, 500),
+  $body-2:        mat-typography-level(22px, 26px, 500),
   $body-1:        mat-typography-level(14px, 20px, 400),
   $caption:       mat-typography-level(12px, 20px, 400),
   $button:        mat-typography-level(14px, 14px, 500),
@@ -23,7 +23,7 @@ $nest-darkgreen: (
     100 : #becec2,
     200 : #93ad99,
     300 : #688c70,
-    400 : #477451,
+    400 : #5eb161, //#477451,
     500 : #275b32,
     600 : #23532d,
     700 : #1d4926,
@@ -41,39 +41,6 @@ $nest-darkgreen: (
         400 : #ffffff,
         500 : #ffffff,
         600 : #ffffff,
-        700 : #ffffff,
-        800 : #ffffff,
-        900 : #ffffff,
-        A100 : #000000,
-        A200 : #000000,
-        A400 : #000000,
-        A700 : #000000,
-    )
-);
-
-$nest-lightgreen: (
-    50 : #ecf6ec,
-    100 : #cfe8d0,
-    200 : #afd8b0,
-    300 : #8ec890,
-    400 : #76bd79,
-    500 : #5eb161,
-    600 : #56aa59,
-    700 : #4ca14f,
-    800 : #429845,
-    900 : #318833,
-    A100 : #d1ffd2,
-    A200 : #9effa0,
-    A400 : #6bff6e,
-    A700 : #52ff56,
-    contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #000000,
-        400 : #000000,
-        500 : #000000,
-        600 : #000000,
         700 : #ffffff,
         800 : #ffffff,
         900 : #ffffff,
@@ -117,7 +84,7 @@ $nest-grey: (
     )
 );
 
-$default-font-color: map-get($nest-grey,500);
+$default-font-color: map-get($nest-grey,400);
 $mat-light-theme-foreground: (
   base:              $default-font-color,
   disabled-button:   rgba($default-font-color, 0.26),

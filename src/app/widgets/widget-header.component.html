@@ -1,6 +1,8 @@
 <mat-card-header>
-  <mat-card-title>
-    {{title}}
-  </mat-card-title>
+  <mat-card-title>{{title}}</mat-card-title>
+  <div class="description">{{description}}</div>
+  <button *ngIf="expandable" mat-icon-button (click)="toggleExpand($event)">
+    <mat-icon>{{expandIcon}}</mat-icon>
+  </button>
 </mat-card-header>
      

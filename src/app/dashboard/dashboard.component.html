@@ -1,5 +1,5 @@
 <div class="grid-container">
-  <mat-grid-list cols="2" rowHeight="300px">
+  <mat-grid-list cols="2" rowHeight="10px">
     <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
         <nest-widget-small *ngIf="card.type == 'small'"
         [title]="card.title"
@@ -8,6 +8,11 @@
         [value]="card.value"
         [actionText]="card.actionText"
         ></nest-widget-small>
+        <nest-widget-action-plan *ngIf="card.type == 'action-plan'"
+        [title]="card.title"
+        [description]="card.description"
+        [actionText]="card.actionText"
+        ></nest-widget-action-plan>
     </mat-grid-tile>
   </mat-grid-list>
 </div>

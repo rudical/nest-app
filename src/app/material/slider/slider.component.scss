@@ -1,0 +1,62 @@
+@import '../../../nest-theme';
+@mixin nest-slider-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  .slider {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  ::ng-deep .mat-slider-min-value.mat-slider-thumb-label-showing .mat-slider-thumb {
+    background-color: mat-color($primary, 400);
+  }
+  ::ng-deep .mat-slider.mat-slider-horizontal .mat-slider-track-wrapper {
+    height: 6px;
+    border-radius: 3px;
+  }
+  ::ng-deep .mat-slider.mat-slider-horizontal .mat-slider-track-background {
+    height: 100%;
+    background-color: mat-color($accent, 100)
+  }
+  ::ng-deep .mat-slider.mat-slider-horizontal .mat-slider-track-fill {
+    height: 6px;
+    background-color: mat-color($primary, 400);
+  }
+  ::ng-deep .mat-accent .mat-slider-thumb-label {
+    background-color: mat-color($primary, 400);
+  }
+
+  ::ng-deep .mat-accent .mat-slider-thumb {
+    height: 40px;
+    width: 40px;
+    background-color: mat-color($primary, 400);
+    border: none;
+    bottom: -20px;
+    right: -20px;
+  }
+
+  .slider-ticks {
+    width: calc(100% - 10px);
+    margin: 20px 5px 0 5px;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@mixin nest-slider-typography($config) {
+
+  .slider-ticks {
+    font: {
+      family: mat-font-family($config, caption);
+      size: mat-font-size($config, caption);
+      weight: mat-font-weight($config, caption);
+    }
+  }
+}
+
+@include nest-slider-theme($nest-app-theme);
+@include nest-slider-typography($nest-typography);
